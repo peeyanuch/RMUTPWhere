@@ -40,7 +40,9 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Search"></activity>
+        <activity android:name=".Search" />
+        <activity android:name=".Tutorial" />
+        <activity android:name=".Plan"></activity>
     </application>
 
 </manifest>

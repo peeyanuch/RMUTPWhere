@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this,Search.class));
                 break;
             case R.id.imageView6:
+                startActivity(new Intent(MainActivity.this, Tutorial.class));
                 break;
             case R.id.imageView7:
+                startActivity(new Intent(MainActivity.this, Plan.class));
                 break;
 
         } //Switch
