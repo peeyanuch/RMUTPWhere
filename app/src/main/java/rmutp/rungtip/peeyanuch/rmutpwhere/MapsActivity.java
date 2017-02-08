@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -36,8 +37,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rmutpLatLng = new LatLng(rmutpLatADouble,rmutpLngADouble);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(rmutpLatLng,16));
 
+        myCreateMarker(rmutpLatLng, R.drawable.build4);
 
 
     } //OnMap
+
+    private void myCreateMarker(LatLng latLng,int intIcon) {
+        mMap.addMarker(new MarkerOptions()
+        .position(latLng)
+        .icon(BitmapDescriptorFactory.fromResource(intIcon)));
+
+
+    }
 
 } //Main Class
