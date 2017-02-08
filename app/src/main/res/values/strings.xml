@@ -5,4 +5,5 @@
     <string name="mainTitle1">แอพพลิเคชั่นระบบนำทางและแสดงข้อมูล</string>
     <string name="mainTitle2">มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร</string>
     <string name="mainTitle3">ศูนย์พระนครเหนือ</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
