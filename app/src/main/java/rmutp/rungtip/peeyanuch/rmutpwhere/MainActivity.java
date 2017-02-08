@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
             case R.id.imageView5:
+                startActivity(new Intent(MainActivity.this,Search.class));
                 break;
             case R.id.imageView6:
                 break;
