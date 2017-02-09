@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import static rmutp.rungtip.peeyanuch.rmutpwhere.R.drawable.bar2;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Explicit
-    private ImageView hub0ImageView, hub1ImageView, hub2ImageView, hub3ImageView;
+    private ImageView hub0ImageView, hub1ImageView, hub2ImageView, hub3ImageView, bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
 
 
 
@@ -22,13 +24,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         hub0ImageView = (ImageView) findViewById(R.id.imageView3);
         hub1ImageView = (ImageView) findViewById(R.id.imageView5);
         hub2ImageView = (ImageView) findViewById(R.id.imageView6);
-        hub3ImageView = (ImageView) findViewById(R.id.imageView7);
+        hub3ImageView = (ImageView) findViewById(R.id.imageView18);
+        bar1ImageView = (ImageView) findViewById(R.id.imageView20);
+        bar2ImageView = (ImageView) findViewById(R.id.imageView21);
+        bar3ImageView = (ImageView) findViewById(R.id.imageView22);
+        bar4ImageView = (ImageView) findViewById(R.id.imageView23);
+        bar5ImageView = (ImageView) findViewById(R.id.imageView24);
 
         //Image Controller
         hub0ImageView.setOnClickListener(MainActivity.this);
         hub1ImageView.setOnClickListener(MainActivity.this);
         hub2ImageView.setOnClickListener(MainActivity.this);
         hub3ImageView.setOnClickListener(MainActivity.this);
+        bar1ImageView.setOnClickListener(MainActivity.this);
+        bar2ImageView.setOnClickListener(MainActivity.this);
+        bar3ImageView.setOnClickListener(MainActivity.this);
+        bar4ImageView.setOnClickListener(MainActivity.this);
+        bar5ImageView.setOnClickListener(MainActivity.this);
 
 
     }   //Main Method
@@ -46,8 +58,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imageView6:
                 startActivity(new Intent(MainActivity.this, Tutorial.class));
                 break;
-            case R.id.imageView7:
+            case R.id.imageView18:
                 startActivity(new Intent(MainActivity.this, Plan.class));
+                break;
+
+            case R.id.imageView20:
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                break;
+            case R.id.imageView21:
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                break;
+            case R.id.imageView22:
+                startActivity(new Intent(MainActivity.this, Plan.class));
+                break;
+            case R.id.imageView23:
+                startActivity(new Intent(MainActivity.this, Search.class));
+                break;
+            case R.id.imageView24:
+                startActivity(new Intent(MainActivity.this, Tutorial.class));
                 break;
 
         } //Switch
