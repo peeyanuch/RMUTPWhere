@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -13,7 +14,10 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 
 public class Search extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener {
@@ -25,7 +29,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
     private int index;
     private SearchView mSearchView;
     private ListView mListView;
-    private String[] roomNumberStrings, detailStrings, buildStrings, levelStrings, imageStrings;
+    private String[] roomNumberStrings, detailStrings, buildStrings, levelStrings, imageStrings, idStrings;
 
 
     @Override
@@ -94,6 +98,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
             buildStrings = new String[jsonArray.length()];
             levelStrings = new String[jsonArray.length()];
             imageStrings = new String[jsonArray.length()];
+            idStrings = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
 
@@ -104,6 +109,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
                 buildStrings[i] = jsonObject.getString("building");
                 levelStrings[i] = jsonObject.getString("level");
                 imageStrings[i] = jsonObject.getString("Image");
+                idStrings[i] = jsonObject.getString("id");
 
             }   // for
 
@@ -124,6 +130,61 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
             mListView.setAdapter(new ArrayAdapter<String>(this,
                     android.R.layout.simple_list_item_1,
                     listSearch));
+
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    Log.d("26febV3", "Position ==> " + i);
+
+                    String strResult = null;
+                    String s = adapterView.getItemAtPosition(i).toString();
+
+                    Log.d("26febV3", "Text Click ==> " + s);
+
+                    String[] strings = new String[]{"roomnumber", "detail"};
+                    String[] urlPHPStrings1 = new String[]{"http://swiftcodingthai.com/nan1/getDetailWhereRoom.php",
+                            "http://swiftcodingthai.com/nan1/getDetailWhereDetail.php"};
+
+                    GetDataWhere getDataWhere = new GetDataWhere(Search.this);
+                    getDataWhere.execute(strings[index], s, urlPHPStrings1[index]);
+
+                    try {
+                        strResult = getDataWhere.get();
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+
+                    Log.d("26febV3", "Result ==> " + strResult);
+
+                    try {
+                        JSONArray jsonArray1 = new JSONArray(strResult);
+
+                        String[] strings1 = new String[6];
+                        JSONObject jsonObject = jsonArray1.getJSONObject(0);
+                        strings1[0] = jsonObject.getString("id");
+                        strings1[1] = jsonObject.getString("roomnumber");
+                        strings1[2] = jsonObject.getString("detail");
+                        strings1[3] = jsonObject.getString("building");
+                        strings1[4] = jsonObject.getString("level");
+                        strings1[5] = jsonObject.getString("Image");
+
+                        Intent intent = new Intent(Search.this, Result.class);
+                        intent.putExtra("Result", strings1);
+                        startActivity(intent);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }   // onItemClick
+
+            });
+
             mListView.setTextFilterEnabled(true);
             setupSearchView();
 
