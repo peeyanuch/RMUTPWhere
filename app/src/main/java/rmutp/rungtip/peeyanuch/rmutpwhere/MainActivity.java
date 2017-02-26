@@ -1,5 +1,7 @@
 package rmutp.rungtip.peeyanuch.rmutpwhere;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +11,9 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-
-
     //Explicit
-    private ImageView hub0ImageView, hub1ImageView, hub2ImageView, hub3ImageView, bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
-
+    private ImageView hub0ImageView, hub1ImageView, hub2ImageView, hub3ImageView,
+            bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
 
 
     @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
                 break;
             case R.id.imageView5:
-                startActivity(new Intent(MainActivity.this,Search.class));
+                showAlert();
                 break;
             case R.id.imageView6:
                 startActivity(new Intent(MainActivity.this, Tutorial.class));
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, Plan.class));
                 break;
             case R.id.imageView23:
-                startActivity(new Intent(MainActivity.this, Search.class));
+                showAlert();
                 break;
             case R.id.imageView24:
                 startActivity(new Intent(MainActivity.this, Tutorial.class));
@@ -82,8 +82,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } //Switch
 
 
-
-
-
     } //onClick
+
+    private void showAlert() {
+
+        final int[] index = {0};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.doremon48);
+        builder.setTitle("Type Category Search");
+        builder.setMessage("You want search for Room Number or Room Detail");
+        builder.setNegativeButton("Number", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                index[0] = 0;
+                Intent intent = new Intent(MainActivity.this, Search.class);
+                intent.putExtra("index", index[0]);
+                startActivity(intent);
+            }
+        });
+        builder.setPositiveButton("Detail", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                index[0] = 1;
+                Intent intent = new Intent(MainActivity.this, Search.class);
+                intent.putExtra("index", index[0]);
+                startActivity(intent);
+            }
+        });
+        builder.show();
+
+
+    }
+
 } // Main Class
