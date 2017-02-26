@@ -9,23 +9,68 @@
     android:background="@drawable/bg0">
 
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="530dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/bar1"
+            android:id="@+id/imageView4"
+            android:layout_weight="1"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/bar2"
+            android:id="@+id/imageView7"
+            android:layout_weight="1"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/bar3"
+            android:id="@+id/imageView8"
+            android:layout_weight="1"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/bar4"
+            android:id="@+id/imageView9"
+            android:layout_weight="1"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            app:srcCompat="@drawable/bar5"
+            android:id="@+id/imageView10"
+            android:layout_weight="1"
+            android:layout_height="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/h1"
-            android:id="@+id/imageView" />
+            android:id="@+id/imageView"
+            android:layout_marginBottom="20dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="1">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -34,22 +79,26 @@
                 android:id="@+id/imageView2" />
 
             <EditText
-                android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/editText"
-                android:hint="Rom Number"
+                android:id="@+id/txtkeyword"
+                android:hint="Room Number"
                 android:textSize="24sp"
                 android:padding="5dp"
                 android:background="@android:color/background_light"
-                android:layout_gravity="center_vertical" />
+                android:layout_gravity="center_vertical"
+                android:layout_width="210dp"
+                android:layout_weight="1.02" />
 
             <Button
-                android:text="Button"
+                android:text="Search"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2" />
+                android:layout_height="54dp"
+                android:focusableInTouchMode="false"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btnSearch" />
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

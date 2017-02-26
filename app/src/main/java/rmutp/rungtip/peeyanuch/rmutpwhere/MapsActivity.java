@@ -24,7 +24,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     //Explicit
     private GoogleMap mMap;
-    private double rmutpLatADouble = 13.817895, rmutpLngADouble = 100.511889;
+    private double rmutpLatADouble = 13.817843, rmutpLngADouble = 100.511888;
     private LatLng rmutpLatLng;
     private double userLatADouble = 0.0, userLngADouble = 0.0;
     private LocationManager locationManager;
@@ -64,12 +64,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             userLngADouble = gpsLocation.getLongitude();
         }
 
-        Log.d("8febV1","lat ==>" + userLatADouble);
-        Log.d("8febV1","lng ==>" + userLngADouble);
+       // Log.d("11febV1","lat ==>" + userLatADouble);
+        //Log.d("11febV1","lng ==>" + userLngADouble);
 
         try {
             LatLng latLng = new LatLng(userLatADouble, userLngADouble);
-            myCreateMarker(latLng, R.drawable.bird48); //เปลี่ยนรูป user
+            myCreateMarker(latLng, R.drawable.m2);
 
 
 
@@ -157,7 +157,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rmutpLatLng = new LatLng(rmutpLatADouble,rmutpLngADouble);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(rmutpLatLng,16));
 
-        myCreateMarker(rmutpLatLng, R.drawable.build4); //เปลี่ยนรูปมาคเกอร์rmutp
+        myCreateMarker(rmutpLatLng, R.drawable.m1);
 
 
     } //OnMap

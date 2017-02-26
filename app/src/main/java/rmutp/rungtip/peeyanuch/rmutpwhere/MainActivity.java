@@ -1,14 +1,15 @@
 package rmutp.rungtip.peeyanuch.rmutpwhere;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-import static rmutp.rungtip.peeyanuch.rmutpwhere.R.drawable.bar2;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+
 
     //Explicit
     private ImageView hub0ImageView, hub1ImageView, hub2ImageView, hub3ImageView, bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
@@ -79,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         } //Switch
+
+
+
+
 
     } //onClick
 } // Main Class
