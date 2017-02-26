@@ -5,16 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-
+import android.widget.TextView;
 
 
 public class Search extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
-
-
-
-
+    private ImageView bar1ImageView, bar2ImageView, bar3ImageView,
+            bar4ImageView, bar5ImageView;
+    private TextView textView;
+    private String[] categorySearchStrings = new String[]{"Room Number", "Detail Room"};
+    private int index;
 
 
     @Override
@@ -22,14 +22,12 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        bindWidget();
 
+        index = getIntent().getIntExtra("index", 0);
 
+        textView.setText("Search by " + categorySearchStrings[index]);
 
-        bar1ImageView = (ImageView) findViewById(R.id.imageView4);
-        bar2ImageView = (ImageView) findViewById(R.id.imageView7);
-        bar3ImageView = (ImageView) findViewById(R.id.imageView8);
-        bar4ImageView = (ImageView) findViewById(R.id.imageView9);
-        bar5ImageView = (ImageView) findViewById(R.id.imageView10);
 
         //Image Controller
         bar1ImageView.setOnClickListener(Search.this);
@@ -38,6 +36,15 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         bar4ImageView.setOnClickListener(Search.this);
         bar5ImageView.setOnClickListener(Search.this);
 
+    }   // Main Method
+
+    private void bindWidget() {
+        bar1ImageView = (ImageView) findViewById(R.id.imageView4);
+        bar2ImageView = (ImageView) findViewById(R.id.imageView7);
+        bar3ImageView = (ImageView) findViewById(R.id.imageView8);
+        bar4ImageView = (ImageView) findViewById(R.id.imageView9);
+        bar5ImageView = (ImageView) findViewById(R.id.imageView10);
+        textView = (TextView) findViewById(R.id.textView);
     }
 
 
@@ -63,7 +70,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         } //Switch
 
 
-       }
+    }
 
-  } //Main Class
+} //Main Class
 
