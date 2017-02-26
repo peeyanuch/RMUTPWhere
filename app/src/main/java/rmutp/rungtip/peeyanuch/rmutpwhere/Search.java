@@ -3,10 +3,7 @@ package rmutp.rungtip.peeyanuch.rmutpwhere;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 
@@ -15,8 +12,6 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
 
-    private EditText txtkeyword;
-    private Button btnSearch;
 
 
 
@@ -26,10 +21,6 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-        txtkeyword = (EditText)findViewById(R.id.txtkeyword);
-        btnSearch = (Button)findViewById(R.id.btnSearch);
-        btnSearch.setOnClickListener(this);
 
 
 
@@ -71,22 +62,8 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
         } //Switch
 
-        if (view.getId()==R.id.btnSearch){
-            Intent searchIntent = new Intent(this, Search.class);
-            searchIntent.putExtra("key",txtkeyword.getText().toString());
-            startActivity(searchIntent);
 
-        }
+       }
 
-
-
-    }
-
-    public boolean onCreateOptionsMenu (Menu menu){
-        getMenuInflater().inflate(R.menu.search, menu);
-        return true;
-    }
-
-
-} //Main Class
+  } //Main Class
 
