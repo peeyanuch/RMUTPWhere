@@ -3,8 +3,11 @@ package rmutp.rungtip.peeyanuch.rmutpwhere;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 
@@ -15,6 +18,9 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
     private TextView textView;
     private String[] categorySearchStrings = new String[]{"Room Number", "Detail Room"};
     private int index;
+    private SearchView mSearchView;
+    private ListView mListView;
+    private String[] roomNumberStrings, detailStrings, buildStrings, levelStrings, imageStrings;
 
 
     @Override
@@ -28,6 +34,8 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
 
         textView.setText("Search by " + categorySearchStrings[index]);
 
+        createSearchView();
+
 
         //Image Controller
         bar1ImageView.setOnClickListener(Search.this);
@@ -37,6 +45,22 @@ public class Search extends AppCompatActivity implements View.OnClickListener {
         bar5ImageView.setOnClickListener(Search.this);
 
     }   // Main Method
+
+    private void createSearchView() {
+
+        try {
+
+            GetDataFromServer getDataFromServer = new GetDataFromServer(Search.this);
+            getDataFromServer.execute();
+            String strJSON = getDataFromServer.get();
+
+            Log.d("26febV1", "JSON ==> " + strJSON);
+
+        } catch (Exception e) {
+            Log.d("26febV1", "e search ==> " + e.toString());
+        }
+
+    }   // createSearchView
 
     private void bindWidget() {
         bar1ImageView = (ImageView) findViewById(R.id.imageView4);
