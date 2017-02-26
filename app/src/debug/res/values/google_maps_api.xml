@@ -13,9 +13,12 @@
     https://developers.google.com/maps/documentation/android/start#get-key
 
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+
+     API key of Nann ====>  AIzaSyD7fQ3XEb4JBpId_XAHfd3j0aQrQT8MBHk
+
     string in this file.
     -->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
-        AIzaSyD7fQ3XEb4JBpId_XAHfd3j0aQrQT8MBHk
+        AIzaSyAx7tvQqr8q8vyMJQH4ctkVkGdlCXfHskk
     </string>
 </resources>
