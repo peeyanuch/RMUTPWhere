@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -22,8 +21,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Search extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener {
 
-    private ImageView bar1ImageView, bar2ImageView, bar3ImageView,
-            bar4ImageView, bar5ImageView;
+
     private TextView textView;
     private String[] categorySearchStrings = new String[]{"Room Number", "Detail Room"};
     private int index;
@@ -52,11 +50,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
     }   // Main Method
 
     private void imageController() {
-        bar1ImageView.setOnClickListener(Search.this);
-        bar2ImageView.setOnClickListener(Search.this);
-        bar3ImageView.setOnClickListener(Search.this);
-        bar4ImageView.setOnClickListener(Search.this);
-        bar5ImageView.setOnClickListener(Search.this);
+
 
     }
 
@@ -196,11 +190,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
     }   // createSearchView
 
     private void bindWidget() {
-        bar1ImageView = (ImageView) findViewById(R.id.imageView4);
-        bar2ImageView = (ImageView) findViewById(R.id.imageView7);
-        bar3ImageView = (ImageView) findViewById(R.id.imageView8);
-        bar4ImageView = (ImageView) findViewById(R.id.imageView9);
-        bar5ImageView = (ImageView) findViewById(R.id.imageView10);
+
         textView = (TextView) findViewById(R.id.textView);
         mSearchView = (SearchView) findViewById(R.id.search_view);
         mListView = (ListView) findViewById(R.id.list_viewSearch);
@@ -209,27 +199,11 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.imageView17:
-                startActivity(new Intent(Search.this, MainActivity.class));
-                break;
-            case R.id.imageView16:
-                startActivity(new Intent(Search.this, MapsActivity.class));
-                break;
-            case R.id.imageView15:
-                startActivity(new Intent(Search.this, Plan.class));
-                break;
-            case R.id.imageView14:
-                startActivity(new Intent(Search.this, Search.class));
-                break;
-            case R.id.imageView13:
-                startActivity(new Intent(Search.this, Tutorial.class));
-                break;
 
         } //Switch
 
 
-    }
+
 
 } //Main Class
 

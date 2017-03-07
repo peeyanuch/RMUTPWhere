@@ -5,85 +5,40 @@
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="rmutp.rungtip.peeyanuch.rmutpwhere.Search"
-    android:background="@drawable/bg0">
+    android:background="@drawable/bg2"
+    tools:context="rmutp.rungtip.peeyanuch.rmutpwhere.Search">
 
     <LinearLayout
+        android:id="@+id/linSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linSearch"
-        android:orientation="vertical"
-        android:layout_below="@+id/linToo"
+        android:layout_above="@+id/linMenuBar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/linMenuBar"
-        android:layout_margin="15dp">
+        android:layout_below="@+id/linToo"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textSize="24sp"
-            android:textColor="@android:color/white" />
+            android:text="TextView"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
         <SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white" />
+
         <ListView
             android:id="@+id/list_viewSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#b4ffffff" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/linMenuBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="false">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/bar1"
-            android:id="@+id/imageView4"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/bar2"
-            android:id="@+id/imageView7"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/bar3"
-            android:id="@+id/imageView8"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/bar4"
-            android:id="@+id/imageView9"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/bar5"
-            android:id="@+id/imageView10"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
