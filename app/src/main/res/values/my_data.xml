@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="my_name">
+        <item>หัวข้อที่1</item>
+        <item>หัวข้อที่2</item>
+        <item>หัวข้อที่3</item>
+        <item>หัวข้อที่4</item>
+
+
+    </string-array>
+
+    <string-array name="my_detail">
+        <item>รายละเอียดที่1</item>
+        <item>รายละเอียดที่2</item>
+        <item>รายละเอียดที่3</item>
+        <item>รายละเอียดที่4</item>
+
+    </string-array>
+
+</resources>

@@ -90,10 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
-        builder.setIcon(R.drawable.doremon48);
-        builder.setTitle("Type Category Search");
-        builder.setMessage("You want search for Room Number or Room Detail");
-        builder.setNegativeButton("Number", new DialogInterface.OnClickListener() {
+        builder.setMessage("กรุณาเลือกรายละเอียดข้อมูลที่ท่านต้องการค้นหา");
+        builder.setNegativeButton("หมายเลขห้อง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 index[0] = 0;
@@ -102,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
-        builder.setPositiveButton("Detail", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("ชื่อห้อง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 index[0] = 1;

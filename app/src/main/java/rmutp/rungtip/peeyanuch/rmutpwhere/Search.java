@@ -23,7 +23,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
 
 
     private TextView textView;
-    private String[] categorySearchStrings = new String[]{"Room Number", "Detail Room"};
+    private String[] categorySearchStrings = new String[]{"หมายเลขห้อง", "ชื่อห้อง"};
     private int index;
     private SearchView mSearchView;
     private ListView mListView;
@@ -39,7 +39,7 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
 
         index = getIntent().getIntExtra("index", 0);
 
-        textView.setText("Search by " + categorySearchStrings[index]);
+        textView.setText("ค้นหาโดย " + categorySearchStrings[index]);
 
         createSearchView();
 
