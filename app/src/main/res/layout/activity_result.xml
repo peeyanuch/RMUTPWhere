@@ -40,7 +40,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
+            android:layout_marginBottom="11dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="11dp"
             android:layout_weight="0.09"
             android:background="@android:color/white"
             android:orientation="horizontal">
@@ -92,7 +95,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -100,7 +103,6 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_weight="1"
                     android:text="TextView"
                     android:textSize="18sp" />
 
@@ -108,7 +110,6 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_weight="1"
                     android:text="TextView"
                     android:textSize="18sp" />
 
@@ -116,15 +117,13 @@
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_weight="1"
                     android:text="TextView"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:layout_weight="1"
+                    android:layout_height="70dp"
                     android:text="TextView"
                     android:textSize="18sp" />
 
