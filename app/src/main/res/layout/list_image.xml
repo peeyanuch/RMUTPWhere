@@ -22,21 +22,44 @@
 
                 <ImageView
                     android:id="@+id/imageView28"
-                    android:layout_width="250dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="5dp"
+                    android:layout_width="240dp"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/textView10"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="TextView"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:textIsSelectable="false"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="6dp"
+                        android:breakStrategy="simple"
+                        android:hyphenationFrequency="full"
+                        android:fontFeatureSettings="'liga' off"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </TableRow>

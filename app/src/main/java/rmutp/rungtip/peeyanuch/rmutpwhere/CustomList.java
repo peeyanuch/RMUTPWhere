@@ -15,12 +15,15 @@ import android.widget.TextView;
 public class CustomList extends ArrayAdapter<String>{
 
     private final Activity context;
+    private final String[] title;
     private final String[] name;
     private final Integer[] imageId;
     public CustomList(Activity context,
-                      String[] name, Integer[] imageId) {
-        super(context, R.layout.list_image, name  );
+                      String[] name,String[] title, Integer[] imageId) {
+        super(context, R.layout.list_image, name);
+
         this.context = context;
+        this.title = title;
         this.name = name;
         this.imageId = imageId;
 
@@ -29,10 +32,12 @@ public class CustomList extends ArrayAdapter<String>{
     public View getView(int i, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.list_image, null, true);
-        TextView txtTitle = (TextView) rowView.findViewById(R.id.textView10);
+        TextView txtTitle = (TextView) rowView.findViewById(R.id.textView15);
+        TextView txtName = (TextView) rowView.findViewById(R.id.textView10);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView28);
-        txtTitle.setText(name[i]);
+        txtName.setText(name[i]);
+        txtTitle.setText(title[i]);
 
         imageView.setImageResource(imageId[i]);
         return rowView;

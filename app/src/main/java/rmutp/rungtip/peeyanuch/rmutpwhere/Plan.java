@@ -2,6 +2,7 @@ package rmutp.rungtip.peeyanuch.rmutpwhere;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class Plan extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
@@ -21,26 +24,52 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
+    protected void attachBaseContext(Context base){
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(base));
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
-        final String name[] = {"1 อาคารอำนวยการ"
-                ,"2 อาคารสำนักงานบริการ"
-                ,"3 อาคารอเนกประสงค์"
-                ,"4 อาคารฝึกพื้นฐานทาง วิศวกรรม"
-                ,"5 อาคารวิศวอุตสาหการ"
-                ,"6 อาคารช่างยนต์ ๑"
-                ,"7 อาคารแผนกอัญมณี"
-                ,"8 อาคารช่างกลโรงงาน"
-                ,"9 อาคารอนุสรณ์ 40 ปี"
-                ,"10 อาคารช่างยนต์ ๒"
-                ,"11 อาคารสาขาวิศวกรรมโยธา"
-                ,"12 อาคารวิศวกรรมการผลิต เครื่องมือและแม่พิมพ์"
-                ,"13 อาคารเรียนและปฏิบัติการ สาขาเครื่องจักรอัตโนมัติ"
-                ,"14 อาคารช่างหล่อ"
-                ,"15 อาคารกิจกรรมนักศึกษา"
-                ,"16 อาคารวิศวกรรมไฟฟ้า"
-                ,"17 อาคารอิเล็กทรอนิกส์"};
+        final String title[]={"อาคารที่ 1"
+                ,"อาคารที่ 2"
+                ,"อาคารที่ 3"
+                ,"อาคารที่ 4"
+                ,"อาคารที่ 5"
+                ,"อาคารที่ 6"
+                ,"อาคารที่ 7"
+                ,"อาคารที่ 8"
+                ,"อาคารที่ 9"
+                ,"อาคารที่ 10"
+                ,"อาคารที่ 11"
+                ,"อาคารที่ 12"
+                ,"อาคารที่ 13"
+                ,"อาคารที่ 14"
+                ,"อาคารที่ 15"
+                ,"อาคารที่ 16"
+                ,"อาคารที่ 17"
+
+        };
+
+        final String name[] = {"อาคารอำนวยการ"
+                ,"อาคารสำนักงานบริการ"
+                ,"อาคารอเนกประสงค์"
+                ,"อาคารฝึกพื้นฐานทาง วิศวกรรม"
+                ,"อาคารวิศวอุตสาหการ"
+                ,"อาคารช่างยนต์ ๑"
+                ,"อาคารแผนกอัญมณี"
+                ,"อาคารช่างกลโรงงาน"
+                ,"อาคารอนุสรณ์ 40 ปี"
+                ,"อาคารช่างยนต์ ๒"
+                ,"อาคารสาขาวิศวกรรมโยธา"
+                ,"อาคารวิศวกรรมการผลิตเครื่องมือและแม่พิมพ์"
+                ,"อาคารเรียนและปฏิบัติการสาขาเครื่องจักรอัตโนมัติ"
+                ,"อาคารช่างหล่อ"
+                ,"อาคารกิจกรรมนักศึกษา"
+                ,"อาคารวิศวกรรมไฟฟ้า"
+                ,"อาคารอิเล็กทรอนิกส์"};
 
         final Integer[] imageId = {
                 R.drawable.b01,//1
@@ -62,29 +91,29 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
                 R.drawable.b13,//17
         };
 
-        final String detail[] = {"อาคารอำนวยการตั้งอยู่ด้านหน้าของมหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร ศูนย์พระนครเหนือ และมีพระวิษณุประดิษฐานอยู่ด้านหน้าของอาคารอำนวยการ"
+        final String detail[] = {"   ตั้งอยู่ด้านหน้าของมหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร ศูนย์พระนครเหนือ และมีพระวิษณุประดิษฐานอยู่ด้านหน้าของอาคารอำนวยการ"
                 ,""
-                ,"อาคารอเนกประสงค์ เป็นอาคารเรียนของสาขาวิชาวิศวกรรมแมคคาทรอนิกส์  และประกอบไปด้วยห้องสมุด ห้อง Self-Access ห้องประชุมเฟืองทอง และโรงยิม"
-                ,"อาคารฝึกพื้นฐานทางวิศวกรรม เป็นการเรียนฝึกพื้นฐาน เช่น วิชาตะไบ "
-                ,"อาคารวิศวอุตสาหการ เป็นอาคารเรียนของสาขาวิชาวิศวกรรมอุตสาหการ"
-                ,"อาคารช่างยนต์๑ เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมเครื่องกล"
-                ,"อาคารแผนกอัญมนี เป็นอาคารเรียนของสาขาวิชาเทคโนโลยีแม่พิมพ์และเครื่องประดับ"
-                ,"อาคารช่างกลโรงงาน เป็นอาคารเรียนระดับ ปวช. ช่างกลโรงงาน"
-                ,"อาคารอนุสรณ์40ปี เป็นอาคารของคณะวิทยาศาสตร์และเทคโนโลยี โดยภายในอาคารแบ่งการเรียนการสอนออกเป็น 3 สาขาวิชา คือ 1.สาขาวิชาวิทยาการคอมพิวเตอร์ 2.สาขาวิชาสิ่งแวดล้อมและทรัพยากรธรรมชาติ 3.สาขาวิชาวัสดุศาสตร์อุตสาหกรรม และมีการเรียนการสอนของสาขาวิชาวิศวกรรมคอมพิวเตอร์"
-                ,"อาคารช่างยนต์๒ เป็นอาคารเรียนของสาขาวิชาวิศวกรรมเครื่องกล แผนกวิชาช่างยนต์ และระดับ ปวช. ช่างยนต์"
-                ,"อาคารสาขาวิศวกรรมโยธา เป็นอาคารเรียนของสาขาวิชาวิศวกรรมโยธา"
-                ,"อาคารวิศวกรรมการผลิตเครื่องมือและแม่พิมพ์ เป็นอาคารเรียนระดับ ปริญญาตรีของสาขาวิชาวิศวกรรมการผลิตเครื่องมือและแม่พิมพ์"
+                ,"   เป็นอาคารเรียนของสาขาวิชาวิศวกรรมแมคคาทรอนิกส์  และประกอบไปด้วยห้องสมุด ห้อง Self-Access ห้องประชุมเฟืองทอง และโรงยิม"
+                ,"   เป็นการเรียนฝึกพื้นฐาน เช่น วิชาตะไบ "
+                ,"   เป็นอาคารเรียนของสาขาวิชาวิศวกรรมอุตสาหการ"
+                ,"   เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมเครื่องกล"
+                ,"   เป็นอาคารเรียนของสาขาวิชาเทคโนโลยีแม่พิมพ์และเครื่องประดับ"
+                ,"   เป็นอาคารเรียนระดับ ปวช. ช่างกลโรงงาน"
+                ,"   เป็นอาคารของคณะวิทยาศาสตร์และเทคโนโลยี โดยภายในอาคารแบ่งการเรียนการสอนออกเป็น 3 สาขาวิชา คือ 1.สาขาวิชาวิทยาการคอมพิวเตอร์ 2.สาขาวิชาสิ่งแวดล้อมและทรัพยากรธรรมชาติ 3.สาขาวิชาวัสดุศาสตร์อุตสาหกรรม และมีการเรียนการสอนของสาขาวิชาวิศวกรรมคอมพิวเตอร์"
+                ,"   เป็นอาคารเรียนของสาขาวิชาวิศวกรรมเครื่องกล แผนกวิชาช่างยนต์ และระดับ ปวช. ช่างยนต์"
+                ,"   เป็นอาคารเรียนของสาขาวิชาวิศวกรรมโยธา"
+                ,"   เป็นอาคารเรียนระดับ ปริญญาตรีของสาขาวิชาวิศวกรรมการผลิตเครื่องมือและแม่พิมพ์"
                 ,""
-                ,"อาคารช่างหล่อ เป็นอาคารสำหรับการเรียนการสอน วิชาวิศวกรรมงานหล่อ"
-                ,"อาคารกิจกรรมนักศึกษา ประกอบด้วยห้องพักครู คณะศิลปะศาสตร์ ห้องชมรมต่างๆ ห้องแนะแนว ห้องฟิตเนต และโรงอาหาร"
-                ,"อาคารวิศวกรรมไฟฟ้า เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมไฟฟ้า และ ระดับ ปวช.  ช่างไฟฟ้ากำลัง"
-                ,"อาคารอิเล็กทรอนิกส์ เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม และระดับ ปวช. ช่างอิเล็กทรอนิกส์"
+                ,"   เป็นอาคารสำหรับการเรียนการสอน วิชาวิศวกรรมงานหล่อ"
+                ,"   เป็นอาคารที่ประกอบด้วยห้องพักครู คณะศิลปะศาสตร์ ห้องชมรมต่างๆ ห้องแนะแนว ห้องฟิตเนต และโรงอาหาร"
+                ,"   เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมไฟฟ้า และ ระดับ ปวช.  ช่างไฟฟ้ากำลัง"
+                ,"   เป็นอาคารเรียนระดับปริญญาตรี สาขาวิชาวิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม และระดับ ปวช. ช่างอิเล็กทรอนิกส์"
         };
 
 
 
 
-        CustomList adapter = new CustomList(Plan.this,name,imageId);
+        CustomList adapter = new CustomList(Plan.this,name,title,imageId);
         listView = (ListView) findViewById(R.id.listview1);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -94,6 +123,8 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
                 final Dialog dialog = new Dialog(Plan.this);
                 dialog.requestWindowFeature(dialog.getWindow().FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dialog_data);
+                TextView textView13 = (TextView)dialog.findViewById(R.id.textView13);
+                textView13.setText(title[i]);
                 TextView textView11 = (TextView)dialog.findViewById(R.id.textView11);
                 textView11.setText(name[i]);
                 TextView textView12 = (TextView)dialog.findViewById(R.id.textView12);
@@ -110,21 +141,6 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
                 });
                      dialog.show();
 
-               // switch (i+1){
-                  //  case 1:
-                    //    setContentView(R.layout.b01);
-                     //   break;
-                    //case 2:
-                      //  setContentView(R.layout.b02);
-                      //  break;
-                    //case 3:
-                      //  setContentView(R.layout.b03);
-                      //  break;
-                   // case 4:
-                      //  setContentView(R.layout.b05);
-                     //   break;
-
-                //}
             }
         });
 
@@ -178,7 +194,7 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(Plan.this);
         builder.setCancelable(false);
-        builder.setMessage("คุณต้องการค้นหา หมายเลขห้อง หรือ รายละเอียดห้อง");
+        builder.setMessage("กรุณาเลือกรายละเอียดข้อมูลที่ท่านต้องการค้นหา");
         builder.setNegativeButton("หมายเลขห้อง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -188,7 +204,7 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
-        builder.setPositiveButton("รายละเอียดห้อง", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("ชื่อห้อง", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 index[0] = 1;

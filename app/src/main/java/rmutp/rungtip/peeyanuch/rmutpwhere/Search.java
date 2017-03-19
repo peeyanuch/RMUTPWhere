@@ -1,5 +1,6 @@
 package rmutp.rungtip.peeyanuch.rmutpwhere;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 
 public class Search extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener {
 
@@ -29,7 +32,11 @@ public class Search extends AppCompatActivity implements View.OnClickListener, S
     private ListView mListView;
     private String[] roomNumberStrings, detailStrings, buildStrings, levelStrings, imageStrings, idStrings;
 
+    @Override
+    protected void attachBaseContext(Context base){
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(base));
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

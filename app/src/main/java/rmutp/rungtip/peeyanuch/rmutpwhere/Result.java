@@ -1,6 +1,7 @@
 package rmutp.rungtip.peeyanuch.rmutpwhere;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class Result extends AppCompatActivity implements View.OnClickListener {
 
     //Explicit
@@ -20,6 +23,12 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
     private ImageView imageView;
 
     private ImageView  bar1ImageView, bar2ImageView, bar3ImageView, bar4ImageView, bar5ImageView;
+
+    @Override
+    protected void attachBaseContext(Context base){
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(base));
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
