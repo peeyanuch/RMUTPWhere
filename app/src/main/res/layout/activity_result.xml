@@ -127,6 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
         android:accessibilityTraversalBefore="@+id/textView8"
         android:animateLayoutChanges="false"
         android:orientation="horizontal">

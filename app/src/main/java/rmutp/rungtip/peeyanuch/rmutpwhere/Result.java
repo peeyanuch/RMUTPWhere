@@ -63,7 +63,9 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
         detailTextView.setText(resultStrings[2]);
         buildTextView.setText(resultStrings[3]);
         levelTextView.setText(resultStrings[4]);
-        Picasso.with(Result.this).load(resultStrings[5]).into(imageView);
+        Picasso.with(Result.this)
+                .load(resultStrings[5])
+                .into(imageView);
 
     }
 

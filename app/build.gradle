@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "rmutp.rungtip.peeyanuch.rmutpwhere"
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,17 +20,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile files('libs/picasso-2.5.2.jar')
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.google.android.gms:play-services-maps:10.2.1'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.android.support.constraint:constraint-layout:+'
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:cardview-v7:25.0.+'
-    compile 'com.android.support:recyclerview-v7:25.0.+'
+    compile 'com.android.support:cardview-v7:25.3.0'
+    compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+    testCompile 'junit:junit:4.12'
 }

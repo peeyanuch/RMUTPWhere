@@ -78,12 +78,12 @@ public class Plan extends AppCompatActivity implements View.OnClickListener {
                 R.drawable.b15,//4
                 R.drawable.b20,//5
                 R.drawable.b05,//6
-                R.drawable.b12,//7 ยังไม่ได้ถ่ายรูป
+                R.drawable.b06,//7
                 R.drawable.b07,//8
                 R.drawable.b09,//9
-                R.drawable.b16,//10 ยังไม่ได้ถ่ายรูป
+                R.drawable.b11,//10
                 R.drawable.b20,//11 ยังไม่ได้ถ่ายรูป
-                R.drawable.b16,//12 ยังไม่ได้ถ่ายรูป
+                R.drawable.b14,//12
                 R.drawable.b16,//13 ยังไม่ได้ถ่ายรูป
                 R.drawable.b16,//14
                 R.drawable.b19,//15
